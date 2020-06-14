@@ -1,0 +1,42 @@
+server:
+  port: 9082
+
+spring:
+  application:
+    name: springcloud-openfeign-consumer
+  main:
+    allow-bean-definition-overriding: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    com.netease.house.springcloudopenfeignconsumer: debug
+
+feign:
+  hystrix:
+    enabled: true
+  okhttp:
+    enabled: true
+  httpclient:
+    enabled: false
+    connection-timeout: 10000
+    max-connections: 200
+ribbon:
+  eureka:
+    enabled: true
+management:
+  endpoint:
+    web:
+      exposure:
+        include:
+          - httptrace
+          - info
+          - health
+          - metrics
+
+
+

@@ -1,0 +1,18 @@
+server:
+  port: 9081
+
+spring:
+  application:
+    name: springcloud-feign-consumer
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+logging:
+  level:
+    com.netease.house.springcloudfeignconsumer.remote.TestFeign: debug
+
+
+
